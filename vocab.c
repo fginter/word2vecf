@@ -159,7 +159,7 @@ struct vocabulary *CreateVocabulary() {
 void SaveVocab(struct vocabulary *v, char *save_vocab_file) {
   long long i;
   FILE *fo = fopen(save_vocab_file, "wb");
-  for (i = 0; i < v->vocab_size; i++) fprintf(fo, "%s %lld\n", v->vocab[i].word, v->vocab[i].cn);
+  for (i = 0; i < v->vocab_size; i++) fprintf(fo, "%s\t%lld\n", v->vocab[i].word, v->vocab[i].cn);
   fclose(fo);
 }
 // Reduces the vocabulary by removing infrequent tokens
